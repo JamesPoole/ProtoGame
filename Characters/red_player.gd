@@ -5,14 +5,14 @@ func _ready():
 	
 func _physics_process(delta):
 	if Input.is_action_pressed("red_1_right"):
-		motion.x += ACCEL
-		motion.x = min(motion.x, MAX_SPEED)
+		move_right()
 	elif Input.is_action_pressed("red_1_left"):
-		motion.x -= ACCEL
-		motion.x = max(motion.x, -MAX_SPEED)
+		move_left()
 	else:
-		motion.x = lerp(motion.x, 0, 0.2)
-	if is_on_floor():
-		if Input.is_action_just_pressed("red_1_up"):
-			motion.y = JUMP_HEIGHT
+		return_to_stationary()
+
+	if Input.is_action_just_pressed("red_1_up"):
+		jump()
+
+
 
