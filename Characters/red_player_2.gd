@@ -4,6 +4,7 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	check_collision('red')
 	if Input.is_action_pressed("red_2_right"):
 		move_right()
 	elif Input.is_action_pressed("red_2_left"):
